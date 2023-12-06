@@ -9,6 +9,9 @@ export default defineConfig({
   site: 'https://docs.doras.to',
   integrations: [starlight({
     title: 'Doras.to',
+    customCss: [
+      './src/styles/custom.css',
+    ],
     editLink: {
       baseUrl: 'https://github.com/doras-to/docs/edit/master/',
     },

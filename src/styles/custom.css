@@ -1,0 +1,9 @@
+.content-panel ul {
+  list-style-type: disc;
+  @apply ml-4;
+}
+
+.content-panel ol {
+  list-style-type: decimal;
+@apply ml-4;
+}
