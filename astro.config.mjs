@@ -45,6 +45,6 @@ export default defineConfig({
       }
     }]
   }), react(), tailwind()],
-  output: "server",
+  output: "hybrid",
   adapter: cloudflare()
 });
