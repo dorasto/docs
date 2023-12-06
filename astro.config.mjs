@@ -9,6 +9,11 @@ export default defineConfig({
   site: 'https://docs.doras.to',
   integrations: [starlight({
     title: 'Doras.to',
+    logo: {
+      light:
+        './src/assets/favicon.svg',
+      dark: './src/assets/favicon-white.svg',
+    },
     customCss: [
       './src/styles/custom.css',
     ],

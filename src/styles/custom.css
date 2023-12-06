@@ -7,3 +7,7 @@
   list-style-type: decimal;
 @apply ml-4;
 }
+
+.astro-wdfg3kas {
+  @apply font-bold;
+}

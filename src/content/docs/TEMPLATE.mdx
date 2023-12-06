@@ -1,0 +1,14 @@
+---
+title: This is your article title
+description: Tell us about your article with a short description.
+# NOTE: The URL is set via the name of the markdown file. If you want the url to be "my-article" then the file name should be "my-article.mdx"
+---
+
+import {Author} from '../../components/Author';
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+<Author client:only author="username" />
+{/* UPDATE `username` IN THE ABOVE FIELD TO CREDIT YOURSELF AS THE AUTHOR. THIS WILL LINK TO YOUR DORAS ACCOUNT. */}
+
+# This is your article title
+normal text can go like this

@@ -10,91 +10,67 @@ import { LinkCard, CardGrid } from "@astrojs/starlight/components";
 
 ---
 
-## Updating an existing article
+## Introduction
+First off, thanks for considering contributing to the docs! We're always looking for people to help improve the docs, whether that's by fixing a typo, adding additional information, or writing a new article. We really appreciate it! We'll just need to get a few things set up first!
 
-If you spot a typo, want to add additional information, or want to update an article to reflect a new feature, you can do so by clicking the "**Edit page**" link at the bottom of the article. It's available on every page of the docs. This will take you to the GitHub repository where the docs are stored. You can then make your changes and submit a pull request, in which we'll review your changes and merge them into the docs once approved. We may ask you to make some changes before we merge your pull request!
-
-If you contribute to the docs, we'll add your GitHub to the article at the bottom to say thanks for contributing!
-
----
-
-## Writing a new article
-
-If you wish to write a new article, it's best to head over to [GitHub](https://github.com/doras-to/docs) and create a new branch. To then create your new article:
-
-### Creating your file
-
-Head over to `src/content/docs` and you can see folders, such as `getting-started`. These are the categories that the articles are sorted into. If you wish to create a new category, you can do so by creating a new folder. If you wish to add an article to an existing category, you can do so by creating a new file in the category folder.
-
-### Understanding the file structure
-
-Create your file in the following format: `my-new-article.mdx`. The `.mdx` extension is important, as it tells the docs that it's a markdown file. What you place before the `.mdx` will be the URL of the article. For example, if you create a file called `my-new-article.mdx` in the `getting-started` folder, the URL will be `https://docs.doras.to/getting-started/my-new-article`.
-
-### New article template
-
-Start off your article by copy/pasting the following code into the top of your article:
-
-```
----
-title: Title of my article
-description: A short description of my article
----
-
-import {Author} from '../../../components/Author';
-
-<Author client:only author="community"/>
+## Updating VS creating a new article
+- **Updating an existing article**
+  - If you're looking to update an existing article, the simplest solution would to click the "**Edit page**" link at the bottom of the article. It's available on every page of the docs. This will take you to the GitHub repository where the docs are stored. You can then make your changes and submit a pull request, in which we'll review your changes and merge them into the docs once approved. We may ask you to make some changes before we merge your pull request!
+- **Creating a new article**
+  - If you're looking to create a new article, you'll need to follow the steps below to get a firm understanding.
 
 ---
-{/* WRITE YOUR ARTICLE BELOW THIS */}
 
-# Title of my article
+## Creating a new article
 
-My article content goes here.
+#### What you'll need
+- A GitHub account
+- A basic understanding of markdown
+- Some development tools (optional)
 
-{/* END OF ARTICLE. PLEASE DON'T EDIT BELOW THIS LINE */}
----
-Thank you to our contributors
-<iframe src="https://github.com/doras-to/docs/graphs/contributors-widget?width=500&height=200&background=none" width="500" height="200" frameborder="0"></iframe>
-```
-
-:::note[Why "community"?]
-In the future we'll be opening up the Doras API for you to enter your Doras username, so that we can display your profile picture and username on the article. For now, you can have to use `community` as the author, but you'll still be credited for your contribution! Please just remember to leave your Doras username in the pull request so we can add you to the article 😊
+#### Development tools
+:::tip[Optional]
+This is only required if you wish to build and preview the site locally. If you're not interested in doing this and just want to write pure markdown, you can skip this section.
 :::
+- [Node.js](https://nodejs.org/en/)
+- [Git](https://git-scm.com/downloads)
+- [PNPM](https://pnpm.io/installation)
+- [GitHub Desktop](https://desktop.github.com/) (optional)
+- [Visual Studio Code](https://code.visualstudio.com/) (you can use any code editor you like, but this is what we use.)
 
-### Formatting and writing your article
+## Getting started
+1. Head over to GitHub and `fork` the [docs repository](https://github.com/doras-to/docs). There's a button to do this in the top right of the repository. This will create a copy of the docs repository in your own GitHub account. You can call it whatever you want! 
+2. Once you've done that, you can clone your forked repository to your computer. The easiest way to do this would be using [GitHub Desktop](https://desktop.github.com/), but you can also use the command line if you prefer.
+3. Open the repo in your code editor of choice. We use [Visual Studio Code](https://code.visualstudio.com/), but you can use any code editor you like.
+4. Open a terminal in your code editor and run the following commands:
+```bash
+pnpm install
+```
+This will install all the dependencies required to build the docs.
+```bash
+pnpm run dev
+```
+This will start a development server, which will allow you to preview the docs. You can access this by going to `http://localhost:4321` in your browser.
 
-Write your article below the `WRITE YOUR ARTICLE BELOW THIS` comment. You can use markdown to format your article. Our docs uses Astro Starlight, so if you're curious on how to style and write your article, you can check out their documentation which I'll link below.
+## File structure
+The docs are built as simply as possible. All the articles are stored in `src/content/docs`. Each article is a markdown file, with the extension `.mdx`. The file name is the URL of the article. For example, if you create a file called `my-new-article.mdx` in the `getting-started` folder, the URL will be `https://docs.doras.to/getting-started/my-new-article`.
+A markdown file must be placed in the `docs` folder, but you can create sub-folders to sort your articles into categories. For example, you could create a folder called `getting-started` and place all your getting started articles in there.
 
-<CardGrid>
-  <LinkCard
-    title="Formatting Markdown"
-    href="https://starlight.astro.build/guides/authoring-content/"
-  />
-  <LinkCard
-    title="Starlight Components (advanced users only)"
-    href="https://starlight.astro.build/guides/components/"
-  />
-</CardGrid>
+### Creating a new article
+I've created a template that you can copy/paste to get started, just be sure to move it to the correct folder for the category, and change the file name to the name of your article. You can find the template in `/content/docs/TEMPLATE.mdx`. Copy/paste this file, and move it to the correct folder. 
 
-### Adding to the sidebar
+For example, if you're creating a new article in the `getting-started` category, you'd move your copied file to `/content/docs/getting-started` and rename it to `getting-started.mdx`.
 
-:::note[Optional]
-The following step is optional and if you're not confident to do it, just let us know when you submit your PR!
-:::
+#### Formatting your article
+We use Astro Starlight to build the docs, so you can use any of the components that Astro Starlight provides. You can find a list of components [here](https://starlight.astro.build/components/). Another great resource would be the [Authoring Content](https://starlight.astro.build/guides/authoring-content/) guide on the Astro Starlight website to help you with your formatting.
 
-We'll need to then add your new article to the sidebar, as this doesn't happen automatically. To do this, head over to [astro.config.mjs](https://github.com/doras-to/docs/blob/master/astro.config.mjs) and under `sidebar` and sort your article into the correct category. For example, if you created a new article in the `getting-started` folder, you'd add it under this, following the existing formatting.
+#### Adding your article to the sidebar
+We will manage this for you should it not be automatically generated, so no need for concern here.
 
-### Submitting the change
 
-Once you're done, you can submit a pull request and we'll review your article. We may ask you to make some changes before we merge your pull request, but if there's any quick problems we can quickly solve, we'll do so ourselves to save you the hassle and get your article out there!
+## Submitting your changes
+Once you've finished writing your article, you can submit your changes by creating a pull request. If you're using GitHub Desktop, you can do this by clicking the "**Create Pull Request**" button in the top right of the GitHub Desktop app after you've commited your changes.
 
-## Important to know...
+Call your pull request whatever you want, and give a brief description of what you've changed. Once you've done that, click "**Create Pull Request**" and you're done! We'll review your changes and merge them into the docs once approved. We may ask you to make some changes before we merge your pull request if we feel it's necessary.
 
-You can always take a look at existing articles to see how they're formatted. If you're unsure about anything, feel free to ask in our [Discord](https://gezel.io/discord) or [open an issue on GitHub](https://github.com/doras-to/docs/issues) and we'll be happy to help!
-
----
-
-#### Thank you to our contributors
-
-<iframe src="https://github.com/doras-to/docs/graphs/contributors-widget?width=500&height=200&background=none" width="500" height="200" frameborder="0">
-</iframe>
+Don't feel obligated or pressured to make it perfect, we'll help you out if you need it, just let us know in the pull request comments and we'll be more than happy to help! We really appreciate any help you can give us, no matter how small! Even submitting a pull request with some problems included is a huge help, as it gives us a starting point to work from! 
