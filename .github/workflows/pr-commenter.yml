@@ -1,12 +1,18 @@
-name: "PR Commenter"
 on:
-  - pull_request_target
+    pull_request:
+        branches:
+            - master
+        types:
+            - opened
 
 jobs:
-  pr-comment:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: exercism/pr-commenter-action@v1.5.1
-        with:
-          github-token: "${{ github.token }}"
-          config-file: ".github/pr-commenter.yml"
+    test:
+        runs-on: ubuntu-latest
+        permissions:
+            pull-requests: write
+        steps:
+            - uses: mshick/add-pr-comment@v2.8.1
+              with:
+                  message: |
+                      ## Thanks for the PR!
+                      We'll review the changes and preview the site before merging. :tada: If you have any additional questions or comments, please feel free to add them here. :heart:
