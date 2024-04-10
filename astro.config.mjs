@@ -7,7 +7,8 @@ import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://docs.doras.to',
+  site: 'https://dorasto.github.io',
+  base: 'docs'
   integrations: [starlight({
     title: 'Doras.to',
     logo: {
